@@ -6,7 +6,6 @@ import { api } from "../../../convex/_generated/api";
 import { Id } from "../../../convex/_generated/dataModel";
 import { Button } from "@/components/ui/button";
 import { Folder, MoreVertical, Link as LinkIcon, Trash2 } from "lucide-react";
-import { formatDate } from "@/lib/utils";
 import { FolderView } from "./folder-view";
 
 interface FolderCardProps {

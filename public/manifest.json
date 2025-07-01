@@ -1,0 +1,48 @@
+{
+  "name": "LINK CLICK - Your Personal Link Manager",
+  "short_name": "LINK CLICK",
+  "description": "Organize your links with folders and search. Built with liquid glass design.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#93C8D8",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/LINK.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "display_override": ["window-controls-overlay", "minimal-ui"],
+  "prefer_related_applications": false,
+  "categories": ["productivity", "utilities"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Create New Link",
+      "short_name": "New Link",
+      "description": "Quickly create a new link",
+      "url": "/?action=new-link",
+      "icons": [
+        {
+          "src": "/LINK.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+} 
