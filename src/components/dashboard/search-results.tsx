@@ -33,7 +33,7 @@ export function SearchResults({ results, searchTerm }: SearchResultsProps) {
     }
   };
 
-  const highlightSearchTerm = (text: string, searchTerm: string): (string | JSX.Element)[] => {
+  const highlightSearchTerm = (text: string, searchTerm: string): (string | React.ReactElement)[] => {
     if (!searchTerm) return [text];
     
     const regex = new RegExp(`(${searchTerm})`, 'gi');
