@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LinkMe - Personal Link Manager
+
+A beautiful, mobile-first link management application built with Next.js, Convex, and liquid glass design inspired by iOS 26.
+
+## Features
+
+- 🔐 **Mock Authentication** - Simple username/email + password signup and login
+- 📁 **Folder Organization** - Create folders to organize your links
+- 🔗 **Link Management** - Add links with titles, URLs, and keywords
+- 🔍 **Global Search** - Search across all links by title, URL, or keywords with live updates
+- 📱 **Mobile-First Design** - Optimized for mobile usage with liquid glass UI
+- 🎨 **Liquid Glass Theme** - Beautiful glassmorphism effects inspired by Apple's design
+- 📋 **Copy URLs** - Easy one-click URL copying
+- 🏷️ **Keywords** - Tag your links for better organization
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Database**: Convex (serverless database)
+- **Styling**: Tailwind CSS with custom liquid glass effects
+- **Icons**: Lucide React
+- **Fonts**: Libre Baskerville, Lora, IBM Plex Mono
+- **TypeScript**: Full type safety
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+ and pnpm
+- A Convex account (free at [convex.dev](https://convex.dev))
+
+### Installation
+
+1. **Clone and install dependencies**:
+   ```bash
+   pnpm install
+   ```
+
+2. **Set up Convex**:
+   ```bash
+   npx convex dev
+   ```
+   This will:
+   - Create a new Convex project (if needed)
+   - Generate a `.env.local` file with your Convex URL
+   - Start the Convex development server
+
+3. **Start the development server**:
+   ```bash
+   pnpm dev
+   ```
+
+4. **Open your browser** and navigate to `http://localhost:3000`
+
+### Environment Variables
+
+The application needs one environment variable:
+
+```env
+NEXT_PUBLIC_CONVEX_URL=your_convex_deployment_url
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is automatically created when you run `npx convex dev`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Getting Started
+1. **Sign Up**: Create an account with username, email, and password
+2. **Create Folders**: Organize your links into folders
+3. **Add Links**: Add links with titles, URLs, and optional keywords
+4. **Search**: Use the global search to find links across all folders
+5. **Copy & Share**: Easily copy URLs for sharing
 
-## Learn More
+### Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Folder Management**: Click on folders to view their contents
+- **Live Search**: Search updates as you type
+- **Mobile Optimized**: Responsive design that works great on mobile
+- **Persistent Sessions**: Stay logged in until you explicitly log out
+- **Visual Feedback**: Beautiful hover effects and animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application features a **liquid glass** design inspired by Apple's iOS 26 design language:
 
-## Deploy on Vercel
+- **Glass Effects**: Translucent surfaces with backdrop blur
+- **Warm Color Palette**: Cream and brown tones for a sophisticated look
+- **Typography**: Libre Baskerville for headings, clean and readable
+- **Mobile-First**: Responsive design optimized for mobile usage
+- **Smooth Animations**: Subtle transitions and hover effects
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Database Schema
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application uses four main tables:
+
+- **Users**: Username, email, password (base64 encoded for demo)
+- **Folders**: Name, user association, timestamps
+- **Links**: Title, URL, keywords, folder association
+- **Sessions**: Token-based authentication with expiration
+
+## Development
+
+### Project Structure
+
+```
+src/
+├── app/                 # Next.js app router
+├── components/
+│   ├── auth/           # Authentication components
+│   ├── dashboard/      # Main app components
+│   ├── providers/      # Context providers
+│   └── ui/            # Reusable UI components
+├── lib/               # Utilities and context
+convex/               # Database schema and functions
+```
+
+### Contributing
+
+This is a demo project, but feel free to fork and modify for your own use!
+
+## Security Note
+
+⚠️ **This is a demo application** with mock authentication. The password hashing is basic Base64 encoding. For production use, implement proper password hashing (bcrypt) and additional security measures.
+
+## License
+
+MIT License - feel free to use this code for your own projects!

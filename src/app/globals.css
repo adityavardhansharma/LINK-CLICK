@@ -1,26 +1,174 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(245, 241, 230);
+  --foreground: rgb(74, 63, 53);
+  --card: rgb(255, 252, 245);
+  --card-foreground: rgb(74, 63, 53);
+  --popover: rgb(255, 252, 245);
+  --popover-foreground: rgb(74, 63, 53);
+  --primary: rgb(166, 124, 82);
+  --primary-foreground: rgb(255, 255, 255);
+  --secondary: rgb(226, 216, 195);
+  --secondary-foreground: rgb(92, 77, 63);
+  --muted: rgb(236, 229, 216);
+  --muted-foreground: rgb(125, 107, 86);
+  --accent: rgb(212, 200, 170);
+  --accent-foreground: rgb(74, 63, 53);
+  --destructive: rgb(181, 74, 53);
+  --destructive-foreground: rgb(255, 255, 255);
+  --border: rgb(219, 208, 186);
+  --input: rgb(219, 208, 186);
+  --ring: rgb(166, 124, 82);
+  --chart-1: rgb(166, 124, 82);
+  --chart-2: rgb(141, 110, 76);
+  --chart-3: rgb(115, 90, 58);
+  --chart-4: rgb(179, 144, 111);
+  --chart-5: rgb(192, 160, 128);
+  --sidebar: rgb(236, 229, 216);
+  --sidebar-foreground: rgb(74, 63, 53);
+  --sidebar-primary: rgb(166, 124, 82);
+  --sidebar-primary-foreground: rgb(255, 255, 255);
+  --sidebar-accent: rgb(212, 200, 170);
+  --sidebar-accent-foreground: rgb(74, 63, 53);
+  --sidebar-border: rgb(219, 208, 186);
+  --sidebar-ring: rgb(166, 124, 82);
+  --radius: 0.25rem;
+  --shadow-2xs: 2px 3px 5px 0px hsl(28 13% 20% / 0.06);
+  --shadow-xs: 2px 3px 5px 0px hsl(28 13% 20% / 0.06);
+  --shadow-sm: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 1px 2px -1px hsl(28 13% 20% / 0.12);
+  --shadow: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 1px 2px -1px hsl(28 13% 20% / 0.12);
+  --shadow-md: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 2px 4px -1px hsl(28 13% 20% / 0.12);
+  --shadow-lg: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 4px 6px -1px hsl(28 13% 20% / 0.12);
+  --shadow-xl: 2px 3px 5px 0px hsl(28 13% 20% / 0.12), 2px 8px 10px -1px hsl(28 13% 20% / 0.12);
+  --shadow-2xl: 2px 3px 5px 0px hsl(28 13% 20% / 0.30);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+  --radius: var(--radius);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Liquid Glass Effects */
+.glass-effect {
+  background: rgba(255, 252, 245, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(219, 208, 186, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+.glass-card {
+  background: rgba(255, 252, 245, 0.9);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(219, 208, 186, 0.2);
+  box-shadow: var(--shadow-xl);
+  border-radius: calc(var(--radius) * 2);
+}
+
+.glass-button {
+  background: rgba(166, 124, 82, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(166, 124, 82, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(166, 124, 82, 1);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.glass-input {
+  background: rgba(255, 252, 245, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(219, 208, 186, 0.4);
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  background: rgba(255, 252, 245, 0.9);
+  border-color: var(--ring);
+  box-shadow: 0 0 0 2px rgba(166, 124, 82, 0.2);
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  .glass-card {
+    border-radius: var(--radius);
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Center native dialog and backdrop */
+dialog[open] {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+/* Glass select */
+select.glass-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--foreground) 50%), linear-gradient(135deg, var(--foreground) 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem; /* space for arrow */
+}
+
+/* Responsive container */
+.container {
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
