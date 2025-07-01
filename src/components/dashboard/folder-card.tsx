@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
+import { Id } from "../../../convex/_generated/dataModel";
 import { Button } from "@/components/ui/button";
 import { Folder, MoreVertical, Link as LinkIcon, Trash2 } from "lucide-react";
 import { formatDate } from "@/lib/utils";
@@ -25,8 +26,8 @@ export function FolderCard({ folder, onDelete }: FolderCardProps) {
   
   // Get link count for this folder
   const links = useQuery(api.links.getFolderLinks, {
-    folderId: folder._id as any,
-    userId: folder.userId as any,
+    folderId: folder._id as Id<"folders">,
+    userId: folder.userId as Id<"users">,
   });
 
   const linkCount = links?.length || 0;
@@ -43,7 +44,7 @@ export function FolderCard({ folder, onDelete }: FolderCardProps) {
   };
 
   if (isOpen) {
-    return <FolderView folderId={folder._id as any} onBack={() => setIsOpen(false)} />;
+    return <FolderView folderId={folder._id as Id<"folders">} onBack={() => setIsOpen(false)} />;
   }
 
   return (

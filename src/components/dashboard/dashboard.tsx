@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { useAuth } from "@/lib/auth-context";
@@ -12,6 +12,7 @@ import { FolderCard } from "./folder-card";
 import { SearchResults } from "./search-results";
 import { CreateFolderDialog } from "./create-folder-dialog";
 import { CreateLinkDialog } from "./create-link-dialog";
+import { Id } from "../../../convex/_generated/dataModel";
 
 export function Dashboard() {
   const { user, logout } = useAuth();
@@ -42,7 +43,7 @@ export function Dashboard() {
     if (confirm("Are you sure you want to delete this folder? All links in this folder will also be deleted.")) {
       try {
         await deleteFolder({
-          folderId: folderId as any,
+          folderId: folderId as Id<"folders">,
           userId: user._id,
         });
       } catch (error) {

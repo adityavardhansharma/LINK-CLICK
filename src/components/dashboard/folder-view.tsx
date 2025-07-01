@@ -46,7 +46,7 @@ export function FolderView({ folderId, onBack }: FolderViewProps) {
     if (confirm("Are you sure you want to delete this link?")) {
       try {
         await deleteLink({
-          linkId: linkId as any,
+          linkId: linkId as Id<"links">,
           userId: user._id,
         });
         setOpenDropdownId(null);
