@@ -33,8 +33,8 @@ export function SearchResults({ results, searchTerm }: SearchResultsProps) {
     }
   };
 
-  const highlightSearchTerm = (text: string, searchTerm: string) => {
-    if (!searchTerm) return text;
+  const highlightSearchTerm = (text: string, searchTerm: string): (string | JSX.Element)[] => {
+    if (!searchTerm) return [text];
     
     const regex = new RegExp(`(${searchTerm})`, 'gi');
     const parts = text.split(regex);
@@ -60,7 +60,7 @@ export function SearchResults({ results, searchTerm }: SearchResultsProps) {
           <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
           <h3 className="text-lg font-medium mb-2">No results found</h3>
           <p className="text-muted-foreground">
-            No links match your search for "{searchTerm}"
+            No links match your search for &quot;{searchTerm}&quot;
           </p>
         </Card>
       </div>
