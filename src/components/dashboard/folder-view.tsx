@@ -216,11 +216,6 @@ export function FolderView({ folderId, onBack }: FolderViewProps) {
                 )}
               </div>
               
-              {/* Date */}
-              <div className="text-xs text-muted-foreground w-16 text-right">
-                {formatDate(link.createdAt)}
-              </div>
-              
               {/* Actions */}
               <div className="flex items-center gap-2">
                 <Button

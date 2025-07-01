@@ -67,11 +67,6 @@ export function FolderCard({ folder, onDelete }: FolderCardProps) {
           <span>{linkCount}</span>
         </div>
         
-        {/* Last Modified */}
-        <div className="text-xs text-muted-foreground w-20 text-right">
-          {formatDate(folder.updatedAt)}
-        </div>
-        
         {/* Menu Button */}
         <div className="relative">
           <Button 
