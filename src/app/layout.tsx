@@ -30,10 +30,12 @@ export const metadata: Metadata = {
       {
         url: "/LINK.svg",
         type: "image/svg+xml",
+        sizes: "any",
       },
       {
         url: "/favicon.ico",
         type: "image/x-icon",
+        sizes: "32x32",
       },
       {
         url: "/icon-192.png",
@@ -53,6 +55,7 @@ export const metadata: Metadata = {
         type: "image/png",
       },
     ],
+    shortcut: "/favicon.ico",
   },
   appleWebApp: {
     capable: true,
