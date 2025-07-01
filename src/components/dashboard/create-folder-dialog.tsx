@@ -37,8 +37,8 @@ export function CreateFolderDialog({ open, onOpenChange }: CreateFolderDialogPro
       
       setName("");
       onOpenChange(false);
-    } catch (err: any) {
-      setError(err.message || "Failed to create folder");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Failed to create folder");
     } finally {
       setLoading(false);
     }

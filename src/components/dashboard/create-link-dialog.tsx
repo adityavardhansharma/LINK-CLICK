@@ -67,8 +67,8 @@ export function CreateLinkDialog({ open, onOpenChange, defaultFolderId }: Create
       });
       setKeywords([]);
       onOpenChange(false);
-    } catch (err: any) {
-      setError(err.message || "Failed to create link");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Failed to create link");
     } finally {
       setLoading(false);
     }
