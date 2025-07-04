@@ -1,6 +1,6 @@
 # LinkMe - Personal Link Manager
 
-A beautiful, mobile-first link management application built with Next.js, Convex, and liquid glass design inspired by iOS 26.
+A beautiful, mobile-first link management application built with Next.js, Convex
 
 ## Features
 
@@ -8,8 +8,6 @@ A beautiful, mobile-first link management application built with Next.js, Convex
 - 📁 **Folder Organization** - Create folders to organize your links
 - 🔗 **Link Management** - Add links with titles, URLs, and keywords
 - 🔍 **Global Search** - Search across all links by title, URL, or keywords with live updates
-- 📱 **Mobile-First Design** - Optimized for mobile usage with liquid glass UI
-- 🎨 **Liquid Glass Theme** - Beautiful glassmorphism effects inspired by Apple's design
 - 📋 **Copy URLs** - Easy one-click URL copying
 - 🏷️ **Keywords** - Tag your links for better organization
 
@@ -17,7 +15,7 @@ A beautiful, mobile-first link management application built with Next.js, Convex
 
 - **Framework**: Next.js 15 with App Router
 - **Database**: Convex (serverless database)
-- **Styling**: Tailwind CSS with custom liquid glass effects
+- **Styling**: Tailwind CSS
 - **Icons**: Lucide React
 - **Fonts**: Libre Baskerville, Lora, IBM Plex Mono
 - **TypeScript**: Full type safety
@@ -115,12 +113,7 @@ convex/               # Database schema and functions
 ```
 
 ### Contributing
-
-This is a demo project, but feel free to fork and modify for your own use!
-
-## Security Note
-
-⚠️ **This is a demo application** with mock authentication. The password hashing is basic Base64 encoding. For production use, implement proper password hashing (bcrypt) and additional security measures.
+Feel free to fork and modify for your own use!
 
 ## License
 
